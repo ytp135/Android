@@ -46,7 +46,7 @@ public class LoginPresenter extends BasePresenter {
         mLogin = (Button) mView.findViewById(login);
         etUsername = (EditText) mView.findViewById(R.id.et_username);
         etPassword = (EditText) mView.findViewById(R.id.et_password);
-        mProgressDialog = new ProgressDialog(context);
+       //mProgressDialog = new ProgressDialog(context);
 
     }
 
