@@ -22,9 +22,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Leon on 2017/2/15.
  */
 
-public class HeiMaRetrofit {
+public class LoginRetrofit {
 
-    private static HeiMaRetrofit sHeiMaRetrofit;
+    private static LoginRetrofit sHeiMaRetrofit;
 
     private Api mApi;
 
@@ -32,7 +32,7 @@ public class HeiMaRetrofit {
 
     private static final int CACHE_MAX_SIZE = 5 * 1024 * 1024;
 
-    private HeiMaRetrofit() {
+    private LoginRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.oschina.net/action/apiv2/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -61,11 +61,11 @@ public class HeiMaRetrofit {
         mApi = retrofit.create(Api.class);
     }
 
-    public static HeiMaRetrofit getInstance() {
+    public static LoginRetrofit getInstance() {
         if (sHeiMaRetrofit == null) {
-            synchronized (HeiMaRetrofit.class) {
+            synchronized (LoginRetrofit.class) {
                 if (sHeiMaRetrofit == null) {
-                    sHeiMaRetrofit = new HeiMaRetrofit();
+                    sHeiMaRetrofit = new LoginRetrofit();
                 }
             }
         }

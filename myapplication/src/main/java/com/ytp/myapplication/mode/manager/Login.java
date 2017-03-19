@@ -5,7 +5,7 @@ import android.util.Log;
 import com.ytp.myapplication.BuildConfig;
 import com.ytp.myapplication.mode.bean.LoginBean;
 import com.ytp.myapplication.mode.bean.User;
-import com.ytp.myapplication.mode.network.HeiMaRetrofit;
+import com.ytp.myapplication.mode.network.LoginRetrofit;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -21,7 +21,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class Login {
     public void login(String username, String pwd, String keep_login) {
-        Observable<LoginBean> observable = HeiMaRetrofit
+        Observable<LoginBean> observable = LoginRetrofit
                 .getInstance()
                 .getApi()
                 .login("login_validate", new User(username, pwd, keep_login));
